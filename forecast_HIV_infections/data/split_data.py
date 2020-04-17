@@ -9,6 +9,7 @@ data['mme_percap'].fillna(data['mme_percap'].mean(), inplace=True)
 data['drugdep'].fillna(data['drugdep'].mean(), inplace=True)
 data['pctunmetneed'].fillna(data['pctunmetneed'].mean(), inplace=True)
 data['nonmedpain'].fillna(data['nonmedpain'].mean(), inplace=True)
+data = data[data['HIVincidence']>0]
 
 X = data.drop(columns='HIVincidence').values
 y = data['HIVincidence'].values
